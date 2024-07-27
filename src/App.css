@@ -1,0 +1,28 @@
+
+.App {
+  background-color: #282c34;
+  min-height: 100vh;
+  color: white;
+  flex-direction: column;
+  padding: 10px 100px;
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.layers-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 10px;
+}
+
+.devices-container{
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  margin: 50px 10px;
+}
+
+
+

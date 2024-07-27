@@ -1,0 +1,81 @@
+.gallery-container {
+  flex-direction: column;
+  display: flex;
+}
+
+.devices-gallery-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.span {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 10px;
+  height: 150px;
+  width: 250px;
+  cursor: pointer;
+  flex-direction: column;
+}
+
+.layer-container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  padding: 0px 10px 0px 10px;
+  flex-direction: column;
+  max-width: 185vh;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  min-height: 250px;
+}
+
+.layer-title {
+  display: flex;
+  align-items: flex-start;
+  align-self: flex-start;
+  justify-content: flex-start;
+  padding: 10px 10px;
+  height: 50px;
+  flex-direction: row;
+}
+
+.layer-item-container {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: row;
+}
+
+.subtitle {
+  text-align: start
+}
+
+.device-title {
+  padding: 5px 0px;
+}
+
+.modal-content {
+  background-color: #282c34;
+  border: 2px solid purple;
+}
+
+/* For WebKit browsers (e.g., Chrome, Safari) */
+.layer-container::-webkit-scrollbar {
+  height: 8px; /* Height of the horizontal scrollbar */
+}
+
+.layer-container::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Track color */
+}
+
+.layer-container::-webkit-scrollbar-thumb {
+  background: #888; /* Scrollbar thumb color */
+  border-radius: 10px; /* Rounded corners for the thumb */
+}
+
+.layer-container::-webkit-scrollbar-thumb:hover {
+  background: #555; /* Scrollbar thumb color on hover */
+}

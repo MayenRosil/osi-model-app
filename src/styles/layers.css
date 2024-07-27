@@ -1,0 +1,51 @@
+
+
+  .table-container {
+    flex-direction: row;
+    display: flex;
+    margin: 0px 15px;
+  }
+
+  .osi-model-container {
+    display: flex;
+    flex-direction: column;
+    margin: 0px 15px;
+  }
+
+  .tcpip-model-container{
+    display: flex;
+    flex-direction: column;
+  }
+
+  span {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border:1px solid blueviolet;
+    padding: 25px 25px 25px 25px;
+    height: 50px;
+    width: 175px;
+    cursor: pointer;
+  }
+
+  .ultima {
+    height: 156px;
+  }
+
+  .primera {
+    height: 104px;
+  }
+
+  .selected {
+    background-color: rgb(105, 105, 10);
+    box-shadow: 0 0 15px yellow;
+  }
+
+  h2 {
+    text-align: center;
+  }
+
+  .toolTip {
+    opacity: 1;
+  }
+

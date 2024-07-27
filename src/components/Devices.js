@@ -41,11 +41,11 @@ const Devices = ({ devices, setDevices }) => {
                                     <b>Capa {layer.number}: {layer.title}</b>
                                 </div>
                                 <div key={i} className='layer-item-container'>
-                                    {layer.devices.map((device, i) =>{
+                                    {layer.devices.map((device, i) => {
                                         return (
-                                            <span key={i} className='span' data-bs-toggle="modal" data-bs-target="#exampleModal">
+                                            <span key={i} className='span' data-bs-toggle="modal" data-bs-target="#exampleModal" onClick={() => setSelectedDevice(device)} >
                                                 <b className='device-title'>{device.title}</b>
-                                                <img src={"https://i.blogs.es/3f89a3/41vupqun30l._sl500_/original.jpeg"} width={100} height={100} />
+                                                <img src={device.image} width={100} height={100} />
                                             </span>
                                         )
                                     })}
@@ -66,39 +66,92 @@ const Devices = ({ devices, setDevices }) => {
                         </div>
                         <div class="modal-body">
                             <div style={{ display: "flex", justifyContent: 'center' }}>
-                                <img src={"https://i.blogs.es/3f89a3/41vupqun30l._sl500_/original.jpeg"}
-                                    width={200} height={200}
+                                <img src={selectedDevice.image}
+                                    width={300} height={200}
+                                    style={{objectFit: 'fill'}}
                                 />
                             </div>
+                            <br />
                             <h4 class="modal-title fs-5" id="exampleModalLabel">Descripcion</h4>
                             <p class="modal-title " id="exampleModalLabel">{selectedDevice.description}</p>
+                            <br />
 
-                            <h4 class="modal-title fs-5" id="exampleModalLabel">Marcas fabricadas</h4>
-                            {
-                                selectedDevice.brands.map((brand, i) => {
-                                    return (
-                                        <p class="modal-title " id="exampleModalLabel"> {brand.title},</p>
-                                    )
-                                })
+                            {selectedDevice.brands &&
+                                <>
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Marcas fabricadas</h4>
+                                    {
+                                        selectedDevice.brands?.map((brand, i) => {
+                                            return (
+                                                <>
+                                                    <p class="modal-title " id="exampleModalLabel"> {brand.title},</p>
+                                                    {brand.description &&
+                                                        <i>{brand.description}</i>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    <br />
+                                </>
                             }
 
-                            <h4 class="modal-title fs-5" id="exampleModalLabel">Puertos/Protocolos</h4>
-                            {
-                                selectedDevice.ports.map((port, i) => {
-                                    return (
-                                        <p class="modal-title " id="exampleModalLabel">{port.title}</p>
-                                    )
-                                })
+                            {selectedDevice.ports &&
+                                <>
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Puertos</h4>
+                                    {
+                                        selectedDevice.ports?.map((port, i) => {
+                                            return (
+                                                <>
+                                                    <p class="modal-title " id="exampleModalLabel"> {port.title},</p>
+                                                    {port.description &&
+                                                        <i>{port.description}</i>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    <br />
+                                </>
                             }
 
-                            <h4 class="modal-title fs-5" id="exampleModalLabel">Marcas compatibles</h4>
-                            {
-                                selectedDevice.compatible_brands.map((comp, i) => {
-                                    return (
-                                        <p class="modal-title " id="exampleModalLabel">{comp.title}</p>
-                                    )
-                                })
+                            {selectedDevice.protocols &&
+                                <>
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Protocolos</h4>
+                                    {
+                                        selectedDevice.protocols?.map((protocol, i) => {
+                                            return (
+                                                <>
+                                                    <p class="modal-title " id="exampleModalLabel"> {protocol.title},</p>
+                                                    {protocol.description &&
+                                                        <i>{protocol.description}</i>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    <br />
+                                </>
                             }
+
+                            {selectedDevice.compatible_brands &&
+                                <>
+                                    <h4 class="modal-title fs-5" id="exampleModalLabel">Marcas compatibles / Usos comunes</h4>
+                                    {
+                                        selectedDevice.compatible_brands?.map((comp, i) => {
+                                            return (
+                                                <>
+                                                    <p class="modal-title " id="exampleModalLabel"> {comp.title},</p>
+                                                    {comp.description &&
+                                                        <i>{comp.description}</i>
+                                                    }
+                                                </>
+                                            )
+                                        })
+                                    }
+                                    <br />
+                                </>
+                            }
+
                         </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>

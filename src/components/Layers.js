@@ -93,13 +93,6 @@ const Layers = ({ layers, setLayers }) => {
                                     <div>
                                         {layer.description}
                                       <br/>
-                                        Dispositivos: 
-                                        {layer.devices.map((d, j) => {
-                                            return (
-                                                <b> {d.title},</b>
-                                            )
-                                        })}
-                                      <br/>
                                         Protocolos: 
                                         {layer.ports.map((p, k) => {
                                             return (
